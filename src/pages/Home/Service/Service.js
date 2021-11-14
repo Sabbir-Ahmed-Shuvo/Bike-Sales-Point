@@ -13,7 +13,7 @@ const Service = ({ service }) => {
       <h4 style={{ textAlign: "justify" }}>Price: {price}</h4>
       <div>
         <Link to={`/details/${id}`}>
-          <button className="btn btn-warning">Show Details</button>
+          <button className="btn btn-warning">Buy Product</button>
         </Link>
       </div>
     </div>

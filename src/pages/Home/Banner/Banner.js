@@ -22,11 +22,16 @@ const Banner = () => {
             </Carousel.Item>
           </Carousel>
         </div>
-        <div className="col-md-4 p-5">
-          <h1>This is our another path</h1>
-          <div className="my-5">
+        <div className="col-md-4 p-5 " style={{ textAlign: "justify" }}>
+          <h3>We sell good products for you</h3>
+          <p>
+            We and our partners store and/or access information on a device,
+            such as cookies and process personal data, such as unique
+            identifiers .
+          </p>
+          <div className="my-2">
             <Link to="/services">
-              <button className="mt-5 btn2">Show All Service</button>
+              <button className="mt-5 btn2">Explore More</button>
             </Link>
           </div>
         </div>

@@ -26,7 +26,7 @@ const Details = () => {
             <p className="card-text card-text">{exatItem?.description}</p>
             <h4 className="card-text card-text">{exatItem?.price}</h4>
             <Link to="/services">
-              <button className="btn btn-warning">Go Services</button>
+              <button className="btn btn-warning">Go Home Page</button>
             </Link>
           </div>
         </div>

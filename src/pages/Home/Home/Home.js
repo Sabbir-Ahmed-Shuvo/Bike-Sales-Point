@@ -5,13 +5,16 @@ import blogimg from "../../../Images/services/bike1.jpg";
 import blogimg2 from "../../../Images/services/bike2.png";
 import blogimg3 from "../../../Images/services/bike3.jpg";
 import blogimg4 from "../../../Images/services/bike4.jpg";
-import Services from "../Services/Services";
+import Review from "../Review/Review";
+import AllProducts from "../AllProducts/AllProducts";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <Services></Services>
+      <br />
+      <AllProducts></AllProducts>
+      <Review></Review>
       <div className="container">
         <h1 className="mt-5">Latest blog posts and articles</h1>
         <div className="row mt-5">

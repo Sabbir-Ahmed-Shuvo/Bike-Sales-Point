@@ -1,8 +1,7 @@
+import React, { useEffect, useState } from "react";
 import Service from "../Service/Service";
-import "./Services.css";
-const { useState, useEffect } = require("react");
 
-const Services = () => {
+const AllProducts = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
     fetch("fakeData.json")
@@ -11,11 +10,11 @@ const Services = () => {
   }, []);
   return (
     <div className="services-container">
-      {services.map((service) => (
+      {services.slice(0, 6).map((service) => (
         <Service key={service.id} service={service}></Service>
       ))}
     </div>
   );
 };
 
-export default Services;
+export default AllProducts;
