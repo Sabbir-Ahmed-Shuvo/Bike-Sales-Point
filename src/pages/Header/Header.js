@@ -28,6 +28,9 @@ const Header = () => {
           <Nav.Link as={Link} to="/services">
             Explore
           </Nav.Link>
+          <Nav.Link as={Link} to="/dashbord">
+            DashBord
+          </Nav.Link>
           <Navbar.Text>
             <span style={{ color: "white" }}>{user.displayName} </span>
             {user.email ? (
