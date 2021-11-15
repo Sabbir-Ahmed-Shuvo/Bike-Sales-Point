@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
-import "./ManageOrder.css";
 
 const ManageOrder = () => {
   const [allBookings, setAllBookings] = useState([]);

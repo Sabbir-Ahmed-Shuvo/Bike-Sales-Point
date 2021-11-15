@@ -23,7 +23,9 @@ const Details = () => {
           <img src={exatItem?.img} className="card-img-top p-2" alt="..." />
           <div className="card-body">
             <h5 className="card-title card-text">{exatItem?.name}</h5>
-            <p className="card-text card-text">{exatItem?.description}</p>
+            <p className="card-text card-text">
+              {exatItem?.description.slice(0, 100)}
+            </p>
             <h4 className="card-text card-text">{exatItem?.price}</h4>
             <Link to="/services">
               <button className="btn btn-warning">Go Home Page</button>

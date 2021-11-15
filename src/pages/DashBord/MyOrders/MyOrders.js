@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import useAuth from "../../../hooks/useAuth";
-import "./MyOrders.css";
 
 const MyOrders = () => {
   const [allBookings, setAllBookings] = useState([]);

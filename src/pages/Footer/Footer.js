@@ -1,10 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import logo from "../../Images/icon/logo-footer-img-1-300x78.png";
-import image1 from "../../Images/services/blog-img-5-1-60x60.jpg";
-import image2 from "../../Images/services/blog-img-6-1-60x60.jpg";
-import image3 from "../../Images/services/blog-img-7-1-60x60.jpg";
-import image4 from "../../Images/services/blog-img-8-1-60x60.jpg";
+
 const Footer = () => {
   return (
     <div className="mt-5 footer">
@@ -12,7 +9,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-md-6 col-lg-3 col-12">
             <div className="pt-3">
-              <img width="75%" src={logo} alt="" />
+              <h2 className="text-white">Bike Sells Point</h2>
               <p className="text mt-3">
                 If you need expert medical advice, you are welcome to contact us
                 at ProMedica any time. Our lines are open 24/7.

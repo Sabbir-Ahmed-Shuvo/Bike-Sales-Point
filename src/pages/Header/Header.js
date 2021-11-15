@@ -17,7 +17,7 @@ const Header = () => {
         className="pe-4"
       >
         <Navbar.Brand href="#home">
-          <img width="75%" className="p-0" src={navlogo} alt="" />
+          <h2 className="text-white px-4">Bike Sells Point</h2>
         </Navbar.Brand>
 
         <Navbar.Toggle />
@@ -29,7 +29,7 @@ const Header = () => {
             Explore
           </Nav.Link>
           <Nav.Link as={Link} to="/dashbord">
-            DashBord
+            Dashboard
           </Nav.Link>
           <Navbar.Text>
             <span style={{ color: "white" }}>{user.displayName} </span>

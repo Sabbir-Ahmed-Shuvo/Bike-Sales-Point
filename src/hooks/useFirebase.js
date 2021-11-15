@@ -60,6 +60,7 @@ const useFirebase =()=>{
         singInWithGoogle,
         logOut,
         isLoad,
+        error,
         emailPasswordSignIn,
         emailPasswordSignUp
     }
