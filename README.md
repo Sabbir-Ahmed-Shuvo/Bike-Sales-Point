@@ -4,7 +4,7 @@
 
 This site is all about a bike selling shop which name is Bike Sales Point. From this site a visitor can order many stylish bike in a cheap rate.
 
-#### To visit the client side: [Click here]().
+#### To visit the client side: [Click here](https://bike-sales-point.web.app/).
 
 or,
 

@@ -10,7 +10,7 @@ const MyOrders = () => {
   const email = user?.email;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myOrder/${email}`)
+    fetch(`https://aqueous-plains-63924.herokuapp.com/myOrder/${email}`)
       .then((res) => res.json())
       .then((data) => setMyOrder(data));
   }, [remove, email]);
@@ -20,7 +20,7 @@ const MyOrders = () => {
       "Are you sure you want to cancel the order?"
     );
     if (procced) {
-      fetch(`http://localhost:5000/remove/${id}`, {
+      fetch(`https://aqueous-plains-63924.herokuapp.com/remove/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

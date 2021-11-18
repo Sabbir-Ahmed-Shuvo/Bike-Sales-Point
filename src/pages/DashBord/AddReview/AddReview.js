@@ -1,25 +1,24 @@
-import React from 'react';
+import React from "react";
 import { useForm } from "react-hook-form";
-import useAuth from '../../../hooks/useAuth';
+import useAuth from "../../../hooks/useAuth";
 
 const AddReview = () => {
-  const { user } = useAuth()
+  const { user } = useAuth();
   const { register, handleSubmit, reset } = useForm();
 
-  const onSubmit = data => {
-    fetch("http://localhost:5000/addReview", {
+  const onSubmit = (data) => {
+    fetch("https://aqueous-plains-63924.herokuapp.com/addReview", {
       method: "POST",
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(data)
-
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(data),
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (data.insertedId) {
-          alert("Your Review Successfully Added!")
-          reset()
-        };
-      })
+          alert("Your Review Successfully Added!");
+          reset();
+        }
+      });
   };
 
   return (
@@ -30,16 +29,20 @@ const AddReview = () => {
           <div className="pb-5 pt-3 rounded-3 mx-auto shadow-lg">
             <h4 className="my-4 text-uppercase purple-text">Give A Review</h4>
             <form onSubmit={handleSubmit(onSubmit)}>
-              {user?.displayName && <input
-                {...register("name")}
-                defaultValue={user?.displayName}
-                className="form-control w-75 mx-auto"
-              />}
-              {user?.email && <input
-                {...register("email")}
-                className="form-control w-75 my-4 mx-auto"
-                defaultValue={user?.email}
-              />}
+              {user?.displayName && (
+                <input
+                  {...register("name")}
+                  defaultValue={user?.displayName}
+                  className="form-control w-75 mx-auto"
+                />
+              )}
+              {user?.email && (
+                <input
+                  {...register("email")}
+                  className="form-control w-75 my-4 mx-auto"
+                  defaultValue={user?.email}
+                />
+              )}
               <textarea
                 {...register("message", { required: true })}
                 className="form-control w-75 mx-auto"
@@ -52,7 +55,9 @@ const AddReview = () => {
               />
               <button
                 type="submit"
-                className="btn btn-outline-info w-75 mx-auto py-2 px-3" >Send
+                className="btn btn-outline-info w-75 mx-auto py-2 px-3"
+              >
+                Send
               </button>
             </form>
           </div>

@@ -7,7 +7,7 @@ const ManageOrder = () => {
   const [status, setStatus] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allOrders")
+    fetch("https://aqueous-plains-63924.herokuapp.com/allOrders")
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
   }, [remove, status]);
@@ -17,7 +17,7 @@ const ManageOrder = () => {
       "Are you sure you want to remove the order?"
     );
     if (procced) {
-      fetch(`http://localhost:5000/remove/${id}`, {
+      fetch(`https://aqueous-plains-63924.herokuapp.com/remove/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -33,12 +33,12 @@ const ManageOrder = () => {
   const [order, setOrder] = useState({});
   // handle  status
   const handleApproved = (id) => {
-    fetch(`http://localhost:5000/allOrders/${id}`)
+    fetch(`https://aqueous-plains-63924.herokuapp.com/allOrders/${id}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
-    setOrder(order.status = "Shipped");
+    setOrder((order.status = "Shipped"));
 
-    fetch(`http://localhost:5000/allOrders/${id}`, {
+    fetch(`https://aqueous-plains-63924.herokuapp.com/allOrders/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(order),
