@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import navlogo from "../../Images/icon/logo-footer-img-1-300x78.png";
 import useAuth from "../../hooks/useAuth";
 import { Nav, Navbar } from "react-bootstrap";
 const Header = () => {
@@ -17,7 +16,7 @@ const Header = () => {
         className="pe-4"
       >
         <Navbar.Brand href="#home">
-          <h2 className="text-white px-4">Bike Sells Point</h2>
+          <h2 className="text-white px-4">Bike Sales Point</h2>
         </Navbar.Brand>
 
         <Navbar.Toggle />
@@ -28,13 +27,15 @@ const Header = () => {
           <Nav.Link as={Link} to="/services">
             Explore
           </Nav.Link>
-          <Nav.Link as={Link} to="/dashbord">
-            Dashboard
-          </Nav.Link>
           <Navbar.Text>
-            <span style={{ color: "white" }}>{user.displayName} </span>
             {user.email ? (
-              <button onClick={logOut}>Log Out</button>
+              <Nav>
+                <Nav.Link className="text-primary" as={Link} to="/dashboard">
+                  Dashboard
+                </Nav.Link>
+                <span className="mx-2 mt-2 text-white">{user.displayName} </span>
+                <button className="btn btn-outline-danger ms-2" onClick={logOut}>Log Out</button>
+              </Nav>
             ) : (
               <Link to="login">LogIn</Link>
             )}

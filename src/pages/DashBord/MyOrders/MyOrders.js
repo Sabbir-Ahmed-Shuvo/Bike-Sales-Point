@@ -3,30 +3,30 @@ import { Table } from "react-bootstrap";
 import useAuth from "../../../hooks/useAuth";
 
 const MyOrders = () => {
-  const [allBookings, setAllBookings] = useState([]);
+  const [myOrder, setMyOrder] = useState([]);
   const [remove, setRemove] = useState(false);
   const { user } = useAuth();
 
   const email = user?.email;
 
   useEffect(() => {
-    fetch(`https://still-beach-60108.herokuapp.com/allregister/${email}`)
+    fetch(`http://localhost:5000/myOrder/${email}`)
       .then((res) => res.json())
-      .then((data) => setAllBookings(data));
+      .then((data) => setMyOrder(data));
   }, [remove, email]);
 
   const handleCancel = (id) => {
     const procced = window.confirm(
-      "Are you sure you want to cancel the booking?"
+      "Are you sure you want to cancel the order?"
     );
     if (procced) {
-      fetch(`https://still-beach-60108.herokuapp.com/remove/${id}`, {
+      fetch(`http://localhost:5000/remove/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            alert("Booking successfully cancelled");
+            alert("Order successfully cancelled");
             setRemove(!remove);
           }
         });
@@ -34,29 +34,31 @@ const MyOrders = () => {
   };
   return (
     <div className="container">
-      <h1 className="text-uppercase mb-5">My all booked vacations</h1>
+      <h1 className="text-uppercase mb-5">My all ordered bikes</h1>
       <Table responsive="sm" striped bordered hover>
         <thead>
           <tr>
             <th>#</th>
-            <th>Package Name</th>
-            <th>Date</th>
+            <th>Bike Name</th>
+            <th>Bike Price</th>
+            <th>Order Date</th>
             <th>Status</th>
           </tr>
         </thead>
         <tbody>
-          {allBookings.map((allBooking, index) => (
+          {myOrder.map((order, index) => (
             <tr>
               <td>{index + 1}</td>
-              <td>{allBooking?.name}</td>
-              <td>{allBooking?.date}</td>
+              <td>{order?.itemName}</td>
+              <td>$ {order?.price}</td>
+              <td>{order?.date}</td>
               <td>
-                {allBooking?.status}
+                {order?.status}
                 <button
                   onClick={() => {
-                    handleCancel(allBooking?._id);
+                    handleCancel(order?._id);
                   }}
-                  className="btn btn-danger ms-3"
+                  className="btn btn-danger ms-3 mt-1"
                 >
                   Cancel
                 </button>

@@ -1,13 +1,21 @@
-# Bike Sales Wiht Shoping-Point
+# Bike Sales Point
 
-This project Live site Link [Live Link](https://medical-and-healthcare.web.app/).
+## Description:
 
-## Available Scripts
+This site is all about a bike selling shop which name is Bike Sales Point. From this site a visitor can order many stylish bike in a cheap rate.
+
+#### To visit the client side: [Click here]().
+
+or,
+
+#### To visit the server side: [Click here](https://aqueous-plains-63924.herokuapp.com/).
+
+### Little bit description about this website:
 
 <ul>
-<li>This website isBike Sales Wiht Shoping-Point releted Website</li>
-<li>In this website i use react touter</li>
-<li>In this website i use parivate route</li>
-<li>If u go services page . In this page i show six card and also details button</li>
-<li>If u click the then it will go login page because that is privete route </li>
+    <li>This website represents a bike selling store.</li>
+    <li>I use firebase for user authentication.</li>
+    <li>I use mongodb for storing data.</li>
+    <li>I put both admin and a normal user route private.</li>
+    <li>Only a logged in user or admin is allowed access the dashboard.</li>
 </ul>

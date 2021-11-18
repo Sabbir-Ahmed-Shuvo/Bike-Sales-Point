@@ -2,50 +2,51 @@ import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 
 const ManageOrder = () => {
-  const [allBookings, setAllBookings] = useState([]);
+  const [allOrders, setAllOrders] = useState([]);
   const [remove, setRemove] = useState(false);
   const [status, setStatus] = useState(false);
+
   useEffect(() => {
-    fetch("https://still-beach-60108.herokuapp.com/allregister")
+    fetch("http://localhost:5000/allOrders")
       .then((res) => res.json())
-      .then((data) => setAllBookings(data));
+      .then((data) => setAllOrders(data));
   }, [remove, status]);
 
   const handleCancel = (id) => {
     const procced = window.confirm(
-      "Are you sure you want to cancel the booking?"
+      "Are you sure you want to remove the order?"
     );
     if (procced) {
-      fetch(`https://still-beach-60108.herokuapp.com/remove/${id}`, {
+      fetch(`http://localhost:5000/remove/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            alert("Booking successfully cancelled");
+            alert("Order successfully removed");
             setRemove(!remove);
           }
         });
     }
   };
 
-  const [booking, setBooking] = useState({});
+  const [order, setOrder] = useState({});
   // handle  status
   const handleApproved = (id) => {
-    fetch(`https://still-beach-60108.herokuapp.com/allregister/${id}`)
+    fetch(`http://localhost:5000/allOrders/${id}`)
       .then((res) => res.json())
-      .then((data) => data);
-    setBooking((booking.status = "Approved"));
+      .then((data) => setOrder(data));
+    setOrder(order.status = "Shipped");
 
-    fetch(`https://still-beach-60108.herokuapp.com/allregister/${id}`, {
+    fetch(`http://localhost:5000/allOrders/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(booking),
+      body: JSON.stringify(order),
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          alert("Booking  Successfully Approved!");
+          alert("Order Successfully Shipped!");
           setStatus(!status);
         }
       });
@@ -53,40 +54,42 @@ const ManageOrder = () => {
 
   return (
     <div className="container my-5">
-      <h2 className="my-4">Manage All Vacation Bookings</h2>
+      <h2 className="my-4">Manage All Orders</h2>
       <Table responsive="sm" striped bordered hover>
         <thead>
           <tr>
             <th>#</th>
-            <th>Name</th>
+            <th>User Name</th>
             <th>Email</th>
-            <th>Package Name</th>
+            <th>Phone</th>
+            <th>Bike Name</th>
             <th>Status</th>
           </tr>
         </thead>
         <tbody>
-          {allBookings.map((allBooking, index) => (
+          {allOrders.map((item, index) => (
             <tr>
               <td>{index + 1}</td>
-              <td>{allBooking?.username}</td>
-              <td>{allBooking?.email}</td>
+              <td>{item?.username}</td>
+              <td>{item?.email}</td>
+              <td>{item?.phone}</td>
               <td>
-                {allBooking?.name} (status: {allBooking?.status})
+                {item?.itemName} ({item?.status})
               </td>
               <td>
                 <button
-                  onClick={() => handleApproved(allBooking?._id)}
+                  onClick={() => handleApproved(item?._id)}
                   className="btn btn-primary mx-2"
                 >
-                  Approve
+                  Shipped
                 </button>
                 <button
                   onClick={() => {
-                    handleCancel(allBooking?._id);
+                    handleCancel(item?._id);
                   }}
                   className="btn btn-danger"
                 >
-                  Cancel
+                  Remove
                 </button>
               </td>
             </tr>

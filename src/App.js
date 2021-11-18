@@ -29,10 +29,10 @@ function App() {
             <Route path="/services">
               <Services></Services>
             </Route>
-            <Route path="/dashbord">
+            <PrivateRoute path="/dashboard">
               <DashBordhome></DashBordhome>
-            </Route>
-            <PrivateRoute path="/details/:serviceId">
+            </PrivateRoute>
+            <PrivateRoute path="/details/:productId">
               <Details></Details>
             </PrivateRoute>
             <Route path="/login">

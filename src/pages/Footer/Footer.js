@@ -1,38 +1,35 @@
 import React from "react";
 import "./Footer.css";
-import logo from "../../Images/icon/logo-footer-img-1-300x78.png";
 
 const Footer = () => {
   return (
     <div className="mt-5 footer">
-      <div className="container">
+      <div className="container pt-5">
         <div className="row">
           <div className="col-md-6 col-lg-3 col-12">
             <div className="pt-3">
-              <h2 className="text-white">Bike Sells Point</h2>
+              <h2 className="text-white">Bike Sales Point</h2>
               <p className="text mt-3">
                 If you need expert medical advice, you are welcome to contact us
-                at ProMedica any time. Our lines are open 24/7.
+                at bike sales point any time. Our lines are open 24/7.
               </p>
               <h2 className="text-white">+ 08002466 7921</h2>
               <p className="text mt-3">
                 Email us:{" "}
-                <span className="email-color">promedica@qode.com</span>
+                <span className="email-color">bcp@qode.com</span>
               </p>
             </div>
           </div>
           <div className="col-md-6 col-lg-3 col-12">
             <div className="pt-3 blog-text">
               <h2 className="text-white">Useful Thinks</h2>
-              <p className="text2 mt-4">Clinical Chemistry Test</p>
-              <p className="text2">Body Fluid Examination</p>
-              <p className="text2">Endoscopic Sleeve</p>
-              <p className="text2">Health Screening Package</p>
-              <p className="text2">Stereotactic Biopsy</p>
-              <p className="text2">Hook Wire Localisation</p>
+              <p className="text2 mt-4">Bike Test</p>
+              <p className="text2">Drive Examination</p>
+              <p className="text2">Cheap Rate</p>
+              <p className="text2">Special Packages</p>
               <p className="text mt-3">
                 Email us:{" "}
-                <span className="email-color">promedica@qode.com</span>
+                <span className="email-color">bcp@qode.com</span>
               </p>
             </div>
           </div>
@@ -54,13 +51,7 @@ const Footer = () => {
               <div className="row mt-4">
                 <div className="col-md-3"></div>
                 <div className="col-md-8">
-                  <p className="text-white">Care for Your Children</p>
-                </div>
-              </div>
-              <div className="row mt-4">
-                <div className="col-md-3"></div>
-                <div className="col-md-8">
-                  <p className="text-white">The Best Health Protection</p>
+                  <p className="text-white">The Best Bike Seller</p>
                 </div>
               </div>
             </div>
@@ -74,7 +65,7 @@ const Footer = () => {
               <p className="text2">London 3000, UK</p>
               <p className="text mt-3">
                 Email us:{" "}
-                <span className="email-color">promedica@qode.com</span>
+                <span className="email-color">bcp@qode.com</span>
               </p>
             </div>
           </div>
